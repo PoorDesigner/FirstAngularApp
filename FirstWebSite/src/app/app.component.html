@@ -1,28 +1,13 @@
-<!--Code to string concatination-->
-<!--<input #box (keyup.enter)="onKeyString(box.value)" >
-<p>{{values}}</p>-->
-
-<router-outlet></router-outlet>
-
-<!--code to print firstName-->
-<!--<input #firstName type="text" (keyup.enter)="onKeyUp(firstName.value)" />
-<input #lastName type="text" (keyup.enter)="onKeyUp(lastName.value)" />
-<br />
-{{firstName.value + ' '+ lastName.value}}-->
-<!--<input #some (keyup)="functionName($event)" />
-{{ values }}-->
-
-<input #student />
-
-<input  type="button" value="Add Student"
-       (click) ="AddStudent(student.value)" />
+<h1>Reactive Forms</h1>
 
 
+<app-form-group-demo></app-form-group-demo>
+<!--<app-name-editor></app-name-editor>-->
 
-<!--<ul>
-  <li *ngFor="let student of students">
-    {{student}}
-  </li>
-</ul>-->
+<!--{{today | date:'fullDate' }}-->
 
-<app-hero  [heroName]="student.value" ></app-hero>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
