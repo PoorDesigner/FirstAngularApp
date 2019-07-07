@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Hero, HeroType } from '../hero';
+import { Component, OnInit, Input } from '@angular/core';
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-hero',
@@ -8,26 +8,17 @@ import { Hero, HeroType } from '../hero';
 })
 export class HeroComponent implements OnInit {
 
-  selectedHero: Hero;
-  heroes: Array<Hero> = [
-    {
-      id: 101,
-      name: "Prabhas"
-    },
-    {
-      id: 202,
-      name: "Tom"
-    }
-  ]
+  @Input() heroName = "";
 
   constructor() {
   }
 
   ngOnInit() {
+    console.log("Child ngOnInit");
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  ngOnChanges() {
+    console.log("Child ngOnChanges");
   }
 
 }
