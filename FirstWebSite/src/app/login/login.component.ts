@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,13 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  userService: UserService;
+  constructor(private formBuilder: FormBuilder, userService: UserService) {
     this.loginForm = formBuilder.group({
       username: '',
       password: ''
     });
+    this.userService = userService;
   }
 
   ngOnInit() {
@@ -21,6 +24,8 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("submit works");
+
+    console.log("calling Login");
+    var result = this.userService.Login(this.loginForm.value.username, this.loginForm.value.password);
   }
 }
