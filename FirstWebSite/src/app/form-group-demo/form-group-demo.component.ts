@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
+import { debug } from 'util';
 
 @Component({
   selector: 'app-form-group-demo',
@@ -10,20 +11,20 @@ import { FormArray } from '@angular/forms';
 })
 export class FormGroupDemoComponent implements OnInit {
 
-
-  constructor(private fb: FormBuilder) {
+  LoginFormGroup: FormBuilder;
+  constructor(fb: FormBuilder) {
+    this.LoginFormGroup = fb.group({
+      userName: '',
+      password: ''
+    })
   }
 
-  LoginFormGroup = this.fb.group({
-    userName: '',
-    password: ''
-  })
+
 
   ngOnInit() {
   }
 
   formSubmitted() {
-    debugger;
-    alert("submitted");
+    console.log(this.LoginFormGroup.value.userName + this.LoginFormGroup.value.password);
   }
 }
