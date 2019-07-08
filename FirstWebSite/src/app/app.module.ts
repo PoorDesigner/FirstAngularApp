@@ -4,16 +4,14 @@ import { ReactiveFormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NameEditorComponent } from './name-editor/name-editor.component';
-import { HighlightDirective } from './highlight.directive';
-import { FormGroupDemoComponent } from './form-group-demo/form-group-demo.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NameEditorComponent,
-    HighlightDirective,
-    FormGroupDemoComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
