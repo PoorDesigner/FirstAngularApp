@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../user.service';
+import { debug } from 'util';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     console.log("calling Login");
-    var result = this.userService.Login(this.loginForm.value.username, this.loginForm.value.password);
+    var result = this.userService.Login(this.loginForm.value.username, this.loginForm.value.password)
+    .subscribe(
+      (data: any) => {
+        debugger;
+      }, // success path
+      error => {
+        debugger;
+      }// error path
+    );
   }
 }
